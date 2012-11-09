@@ -10,7 +10,7 @@ GIT_MAKE_OPTIONS='NO_GETTEXT=1 NO_TCLTK=1'
 
 function log { log-start "$@" && echo; }
 function log-start { echo -n "-----> $*"; }
-function log-done { echo '       done.'; }
+function log-done { echo ' done.'; }
 
 function make-git {
   make prefix=$GIT_PREFIX $GIT_MAKE_OPTIONS "$@"
