@@ -5,7 +5,7 @@ CACHE_DIR=$2
 
 GIT_TARBALL=http://github.com/git/git/archive/master.tar.gz
 GIT_DIRNAME=git-master
-GIT_PREFIX=/app/vendor/git
+GIT_PREFIX=/usr/local
 GIT_MAKE_OPTIONS='NO_GETTEXT=1 NO_TCLTK=1'
 
 function log { log-start "$@" && echo; }
