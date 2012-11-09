@@ -8,14 +8,22 @@ GIT_DIRNAME=git-master
 GIT_PREFIX=/app/vendor/git
 GIT_MAKE_OPTIONS='NO_GETTEXT=1 NO_TCLTK=1'
 
-function log_doing { echo -n "-----> $*..."; }
-function log_done { echo '       done.'; }
+function log { log_start "$@" && echo; }
+function log-start { echo -n "-----> $*..."; }
+function log-done { echo '       done.'; }
 
-log_doing 'Downloading Git'
+function make-git {
+  make prefix=$GIT_PREFIX $GIT_MAKE_OPTIONS "$@"
+}
+
+log-start 'Downloading Git...'
 curl -s -L $GIT_TARBALL | tar xz
-log_done
+log-done
 
-log_doing 'Compiling Git'
+log 'Compiling Git...'
 cd $GIT_DIRNAME
-make prefix=$GIT_PREFIX $GIT_MAKE_OPTIONS install
-log_done
+make-git all
+
+log-start 'Installing Git...'
+make-git install
+log-done
