@@ -8,8 +8,8 @@ GIT_DIRNAME=git-master
 GIT_PREFIX=/app/vendor/git
 GIT_MAKE_OPTIONS='NO_GETTEXT=1 NO_TCLTK=1'
 
-function log_doing { printf '-----> %s...' "$*"; }
-function log_done { printf '       done.'; }
+function log_doing { echo -n "-----> $*..."; }
+function log_done { echo '       done.'; }
 
 log_doing 'Downloading Git'
 curl -s -L $GIT_TARBALL | tar xz
