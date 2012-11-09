@@ -9,7 +9,7 @@ GIT_PREFIX=/app/vendor/git
 GIT_MAKE_OPTIONS='NO_GETTEXT=1 NO_TCLTK=1'
 
 function log { log-start "$@" && echo; }
-function log-start { echo -n "-----> $*..."; }
+function log-start { echo -n "-----> $*"; }
 function log-done { echo '       done.'; }
 
 function make-git {
