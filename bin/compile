@@ -17,7 +17,7 @@ function make-git {
 }
 
 log-start 'Downloading Git...'
-curl -s -L $GIT_TARBALL | tar xz
+curl -L $GIT_TARBALL | tar xz
 log-done
 
 log 'Compiling Git...'
