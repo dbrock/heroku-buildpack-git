@@ -7,7 +7,7 @@ GIT_TARBALL=http://github.com/git/git/archive/master.tar.gz
 GIT_DIRNAME=git-master
 GIT_PREFIX="/app/vendor/git"
 GIT_DISABLED='GETTEXT PERL PYTHON TCLTK'
-GIT_MAKE_OPTIONS=`printf 'NO_%s ' $GIT_DISABLED`
+GIT_MAKE_OPTIONS=`printf 'NO_%s=1 ' $GIT_DISABLED`
 
 function log { log-start "$@" && echo; }
 function log-start { echo -n "-----> $*"; }
